@@ -15,3 +15,14 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+Guide:
+  title: Music Notation A South African Guide
+  author: Christine Lucia
+  isbn: 978-1-86888-568-8
+  description: Music Notation A South African Guide presents a new and uniquely south African approach to 
+  learning about staff notation – especially for musicians who are educated in the tonic solfa 
+  system. As they work through the book, learners build up an understanding of each aspect of 
+  notation by experiencing it as music.
+  image_url: Music-Notation-A-South-African-Guide.jpg
+  price: 170.00
