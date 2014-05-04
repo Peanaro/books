@@ -1,5 +1,40 @@
 /* Global styles */
 
+#banner {
+	background: #003333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid;
+	border-color: #003366;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	color: White;
+	text-align: center;
+}
+#banner img {
+	float: left;
+}
+#columns {
+	background: #003366;
+}
+#main {
+	margin-left: 13em;
+	padding-top: 4ex;
+	padding-left: 2em;
+	background: white;
+}
+#side {
+	float: left;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	width: 12em;
+	background: #003366;
+}
+#side a {
+	color: white;
+	font-size: small;
+}
+
 #store #notice {
         color: #000;
         border: 2px solid red;

@@ -1,15 +1,16 @@
+# encoding: utf-8
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
 	@update = {
-		:title  	=> 'Student Counselling and Development - Contemporary issues in the Southern African Context'
-		:author		=> 'Litha Beekman, Charl Cilliers and Andre de Jager'
-		:isbn 		=> '978-1-86888-681-4'
-		:descrption	=> 'As a ground-breaking scholarly contribution to the field of psychology, this is a comprehensive peer-reviewed publication for those working in Student Counselling and Development (SCD) units in higher education (HE). '
-		:image_url	=> 'Student-Counselling--and-Development.jpg'
-		:price		=> 330.00
+		:title => 'Student Counselling and Development - Contemporary issues in the Southern African Context',
+		:author => 'Litha Beekman Charl Cilliers and Andre de Jager',
+		:isbn => '978-1-86888-681-4',
+		:descrption => 'As a ground-breaking scholarly contribution to the field of psychology, this is a comprehensive peer-reviewed publication for those working in Student Counselling and Development (SCD) units in higher education (HE).',
+		:image_url => 'Student-Counselling--and-Development.jpg',
+		:price => 330.00
 	}
   end
 
