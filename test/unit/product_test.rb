@@ -20,12 +20,12 @@ class ProductTest < ActiveSupport::TestCase
 	product.price = -1
 	assert product.invalid?
 	assert_equal "must be greater than or equal to 0.01" ,
-		product.errors[:price].join('; ' )
+		product.errors[:price]
 		
 	product.price = 0
 	assert product.invalid?
 	assert_equal "must be greater than or equal to 0.01" ,
-		product.errors[:price].join('; ' )
+		product.errors[:price]
 		
 	product.price = 1
 	assert product.valid?
@@ -51,27 +51,27 @@ class ProductTest < ActiveSupport::TestCase
 		assert new_product(name).invalid?, "#{name} shouldn't be valid"
 	end
   end
-  test "product is not valid without a unique isbn" do
-	product = Product.new(:title => "My Book Title",
+  test "product is not valid without a unique title" do
+	product = Product.new(:title => products(:guide).title,
 						  :author => "Lebs Lebese",
-						  :isbn => products(:ruby).isbn,
+						  :isbn => "1991-07-11",
 						  :description => "yyy" ,
 						  :price => 1,
 						  :image_url => "fred.gif" )
 	assert !product.save
-	assert_equal "has already been taken" , product.errors[:isbn].join('; ' )
+	assert_equal "has already been taken" , product.errors[:title]
   end
-  test "product is not valid without a unique isbn - i18n" do
-    product = Product.new(:title => "My Book Title",
+  test "product is not valid without a unique title - i18n" do
+    product = Product.new(:title => products(:guide).title,
 						  :author => "Lebs Lebese",
-						  :isbn => products(:ruby).isbn,
+						  :isbn => "1991-07-11",
                           :description => "yyy", 
                           :price       => 1, 
                           :image_url   => "fred.gif")
 
     assert !product.save
-    assert_equal I18n.translate('activerecord.errors.messages.taken'),
-                 product.errors[:isbn].join('; ')
+    assert_equal [I18n.translate('activerecord.errors.messages.taken')],
+                 product.errors[:title]
   end
   
 end
